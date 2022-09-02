@@ -3,12 +3,12 @@ class Sym:
     def __init__(self,c,s):
         self.n = 0
         # self.at = c if self.at else 0
-        if c != 0:
+        if c is not None:
             self.at = c
         else:
             self.at = 0
         # self.name = s if self.name else ""
-        if s != "":
+        if s is not None:
             self.name = s
         else:
             self.name = ""
