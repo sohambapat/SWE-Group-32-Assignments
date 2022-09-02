@@ -29,3 +29,32 @@ def nums( n ):
         n._has.sort()
         n.isSorted = True
     return n._has
+
+# function for Num:add(v,   pos)
+def add (v, pos, self, n, nums): #nums replaces the.nums
+    if v!="?":
+        self.n=n+1
+        if self.lo > v:  # checks for lowest value
+            self.lo=v
+        if self.hi < v:  # checks for highest value
+            self.hi=v
+        if len(self._has) < nums: # checks if there is enough space in _has
+            pos=len(self._has)+1 
+        else:
+            pos=random.randint(0,len(self._has)) # if not, chooses a random position for the new value
+        if pos:
+            self.isSorted=False 
+            self._has[pos]=float(v) # Adds the new value to _has
+    else:
+        return
+
+
+# function for Num:mid()
+def median(self):
+    if self.isSorted==False: # needs to be sorted to find the median 
+        return
+    else:
+        if len(self._has)%2==1: # checks if the length of _has is odd or even
+            return self._has[(len(self._has)-1)/2]
+        else: #if even, divide the middle two values to get the median
+            return float(self._has[len(self._has)/2] - self._has[(len(self._has)-2)/2]) 
