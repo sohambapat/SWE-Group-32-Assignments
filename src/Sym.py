@@ -1,3 +1,6 @@
+from cmath import log
+
+
 class Sym:
     # Constructor Sym:new(c,s) 
     def __init__(self,c,s):
@@ -15,6 +18,12 @@ class Sym:
         # _has = {}
         self._has = {}
 
+    def div(self):
+        e = 0
+        for _, n in self._has.items():
+            if n > 0 :
+                e = e - (n/self.n)*log(n/self.n,2)
+        return e
 
     # function Sym:mid(col,    most,mode) 
     def mid(self, col, mode, most=-1):

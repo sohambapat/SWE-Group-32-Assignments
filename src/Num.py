@@ -48,6 +48,10 @@ def add (v, pos, self, n, nums): #nums replaces the.nums
     else:
         return
 
+# function for Num:div()
+def stdDev(self):
+    a = nums(self)
+    return (per(a,.9)-per(a,.1))/2.58
 
 # function for Num:mid()
 def median(self):
