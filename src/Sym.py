@@ -17,6 +17,17 @@ class Sym:
             self.name = ""
         # _has = {}
         self._has = {}
+        
+    # function sym:add(v)
+    def add(self,v):
+        if v!= "?":
+            self.n= self.n+1
+            if self._has[v] is not None:
+                self._has[v]=self._has[v]+1
+            else: self._has[v]=1
+
+        else: return
+ 
 
     def div(self):
         e = 0
@@ -31,3 +42,4 @@ class Sym:
             if v > most :
                 mode, most = k, v
         return mode
+    
