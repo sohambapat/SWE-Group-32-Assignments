@@ -19,16 +19,17 @@ class Sym:
         self._has = {}
         
     # function sym:add(v)
-    def add(self,v):
+    def add(self, v):
         if v!= "?":
             self.n= self.n+1
-            if self._has[v] is not None:
+            if v in self._has.keys():
                 self._has[v]=self._has[v]+1
-            else: self._has[v]=1
-
-        else: return
+            else: 
+                self._has[v]=1
+        else: 
+            return
  
-
+    # function sym:div()
     def div(self):
         e = 0
         for _, n in self._has.items():
