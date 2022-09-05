@@ -19,7 +19,18 @@ def test_sym():
     else:
         print("Sym test passed")
 
-
+def test_num():
+    num = Num(0,"")
+    for i in range(1,100):
+        num.add(i)
+    mid = num.median
+    div = num.stdDev
+    print('mid: {}, div: {}'.format(mid, div))
+    if not (mid >= 50 and mid <= 52 and div > 30.5 and div <32):
+        raise AssertionError()
+    else:
+        print("Num test passed")
+    
 
 if __name__ == "__main__":
     test_sym()

@@ -1,3 +1,6 @@
+from math import floor
+
+
 class Num:
 
     def __init__(self, c, s):
@@ -51,8 +54,14 @@ class Num:
 
     # function for Num:div()
     def stdDev(self):
-        a = nums(self)
-        return (per(a,.9)-per(a,.1))/2.58
+        a = self.nums(self)
+        return (self.per(a,.9)-self.per(a,.1))/2.58
+
+    def per(t,p):
+        if p is None:
+            p = .5
+        p= floor((p*len(t))+.5)
+        return t[max(1,min(len(t),p))]
 
     # function for Num:mid()
     def median(self):
