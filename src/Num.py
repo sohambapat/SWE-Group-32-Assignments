@@ -4,6 +4,8 @@ import random
 
 class Num:
 
+    the = {"eg":"Hello", "dump":"false", "file": "../test-file.csv", "help": "..", "nums": "32", "seed": random.randint(0,1000), "seperator":","}
+
     def __init__(self, c, s):
         self.n = 0
 
