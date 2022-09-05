@@ -1,5 +1,6 @@
 from cmath import log
 
+import random
 
 class Sym:
     
