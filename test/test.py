@@ -43,5 +43,6 @@ def test_bignum():
 
 if __name__ == "__main__":
     test_sym()
+    test_num()
     test_bignum()
     
