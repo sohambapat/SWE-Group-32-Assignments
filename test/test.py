@@ -19,8 +19,17 @@ def test_sym():
     else:
         print("Sym test passed")
 
-
+def test_bignum():
+    print('\n-----------------------------------')
+    num=Num(0, '')
+    for x in range(1, 1000):
+        num.add(x, 32)
+    # print output: oo(num.nums())
+    num._has.sort()
+    print(num._has)
+    print('Passed? =', len(num._has) == 32)
 
 if __name__ == "__main__":
     test_sym()
+    test_bignum()
     

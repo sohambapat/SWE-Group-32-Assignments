@@ -1,3 +1,5 @@
+import random
+
 class Num:
 
     def __init__(self, c, s):
@@ -8,44 +10,49 @@ class Num:
         else:
             self.at = 0
 
-        if s is not None:
+        if s is not None and s != '':
             self.name = s
+            print(s)
+            # w = ((s or ""):find"-$" and -1 or 1)
+            # if a '-' is found always returns -1, returns 1 otherwise        
+            self.w = -1 if (s[len(s)-1] == '-') else 1
         else:
             self.name = ''
-        
+            self.w = 1
         self._has = []
         self.lo = float('inf')
         self.hi = float('-inf')
         self.isSorted = True
 
-        # w = ((s or ""):find"-$" and -1 or 1)
-        # if a '-' is found always returns -1, returns 1 otherwise        
-        self.w = -1 if (s[len(s)-1] == '-') else 1
+        
         
     # function Num:nums()
-    def nums(self, n):
-        if type(n) != Num:
+    def nums(self):
+        if type(self) != Num:
             return
-        if not n.isSorted:
-            n._has.sort()
-            n.isSorted = True
-        return n._has
+        if not self.isSorted:
+            self._has.sort()
+            self.isSorted = True
+        return self._has
 
     # function for Num:add(v,   pos)
-    def add (v, pos, self, n, nums): #nums replaces the.nums
+    def add (self, v, nums): #nums replaces the.nums
         if v!="?":
-            self.n=n+1
+            self.n += 1
             if self.lo > v:  # checks for lowest value
                 self.lo=v
             if self.hi < v:  # checks for highest value
                 self.hi=v
             if len(self._has) < nums: # checks if there is enough space in _has
-                pos=len(self._has)+1 
-            else:
-                pos=random.randint(0,len(self._has)) # if not, chooses a random position for the new value
-            if pos:
-                self.isSorted=False 
-                self._has[pos]=float(v) # Adds the new value to _has
+                pos=len(self._has)
+            elif random.uniform(0, 1) < nums/self.n:
+                pos=random.randint(0, len(self._has) - 1) # if not, chooses a random position for the new value                
+            if 'pos' in locals(): # Check if pos has been defined
+                self.isSorted=False
+                if pos < len(self._has):
+                    self._has[pos]=float(v) # Adds the new value to _has
+                else:
+                    self._has.insert(pos, float(v)) # Adds the new value to _has
         else:
             return
 
