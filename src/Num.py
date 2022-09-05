@@ -62,10 +62,10 @@ class Num:
 
     # function for Num:div()
     def stdDev(self):
-        a = self.nums(self)
+        a = self.nums()
         return (self.per(a,.9)-self.per(a,.1))/2.58
 
-    def per(t,p):
+    def per(self,t,p):
         if p is None:
             p = .5
         p= floor((p*len(t))+.5)
@@ -73,10 +73,8 @@ class Num:
 
     # function for Num:mid()
     def median(self):
-        if self.isSorted==False: # needs to be sorted to find the median 
-            return
-        else:
-            if len(self._has)%2==1: # checks if the length of _has is odd or even
-                return self._has[(len(self._has)-1)/2]
-            else: #if even, divide the middle two values to get the median
-                return float(self._has[len(self._has)/2] - self._has[(len(self._has)-2)/2]) 
+        self.nums()
+        if len(self._has)%2==1: # checks if the length of _has is odd or even
+            return self._has[int((len(self._has)-1)/2)]
+        else: #if even, divide the middle two values to get the median
+            return float(self._has[len(self._has)/2] - self._has[(len(self._has)-2)/2]) 
