@@ -41,8 +41,11 @@ def test_bignum():
     print(num._has)
     print('Passed? =', len(num._has) == 32)
 
+def test_the():
+    print(Num.the)
+
 if __name__ == "__main__":
     test_sym()
-    test_num()
+    test_the()
     test_bignum()
     
