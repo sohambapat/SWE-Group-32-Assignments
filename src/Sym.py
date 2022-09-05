@@ -2,6 +2,9 @@ from cmath import log
 
 
 class Sym:
+    
+    the = {"eg":"Hello", "dump":"false", "file": "../test-file.csv", "help": "..", "nums": "32", "seed": random.randint(0,1000), "seperator":","}
+
     # Constructor Sym:new(c,s) 
     def __init__(self,c,s):
         self.n = 0
