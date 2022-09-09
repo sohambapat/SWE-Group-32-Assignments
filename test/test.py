@@ -48,4 +48,5 @@ if __name__ == "__main__":
     test_sym()
     test_the()
     test_bignum()
+    test_num()
     
