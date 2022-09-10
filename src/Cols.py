@@ -6,25 +6,26 @@ class Cols:
 
     # names is a table
     def __init__(self, names):
-        # Left these as dicts where key is col numbers starting from 0
+        # Changed these from dicts to lists because the lua
+        # push method sets the key to index value, just like a list
         self.names = names
-        self.all = {}     # Will have to go back to Num to change
-        self.klass = None # list type from [] to {} so all columns
-        self.x = {}       # can be saved easily
-        self.y = {}
+        self.all = []
+        self.klass = None
+        self.x = []
+        self.y = []
 
-        # For c, s in pairs(names) do
-        # For key, value in pairs(t) do
+        # Left names as a dict, but can easily be changed to list
+        # if wanted. c would be index and s would be value at index
         for c, s in names.items():
             if re.match("^[A-Z]+", s):
                 col = Num(c, s)
             else:
                 col = Sym(c, s)
-            self.all[c] = col
+            self.all.append(col)
             if re.search(":$", s) is None:
                 if re.search("[!+-]", s):
-                    self.y[c] = col
+                    self.y.append(col)
                 else:
-                    self.x[c] = col
+                    self.x.append(col)
                 if re.search("!$", s):
                     self.klass=col
