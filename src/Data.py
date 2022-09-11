@@ -22,8 +22,8 @@ class Data:
         if not self.cols:
             self.cols = Cols(xs)
         else:
-            row.append(self.rows, xs.cells, xs)
+            row.append(self.rows)
             for _, todo in [(i, j) for i in self.cols.x for j in self.cols.y if i != j]:
-                for _, cols in todo.items():
-                    Cols.add(row.cells[col.at])
+                for _, col in todo.items():
+                    Cols.add(row.cells[index(col)])
         
