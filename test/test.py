@@ -2,6 +2,7 @@ import sys
 sys.path.append('src')
 from Sym import Sym
 from Num import Num
+from Data import Data
 
 def test_sym():
     sym = Sym(0,"")
@@ -43,6 +44,10 @@ def test_bignum():
 
 def test_the():
     print(Num.the)
+
+def test_data(d): # d is the csv file with location
+    data = Data(d)
+    print(data) 
 
 if __name__ == "__main__":
     test_sym()
