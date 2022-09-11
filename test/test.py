@@ -50,8 +50,10 @@ def test_data(d): # d is the csv file with location
     print(data) 
 
 if __name__ == "__main__":
+    d="../test-file.csv"
     test_sym()
     test_the()
     test_bignum()
+    test_data(d)
     test_num()
     
