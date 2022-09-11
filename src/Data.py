@@ -1,10 +1,18 @@
-import re # Regex library, allowed by Q36 on discord
+import re
+import string # Regex library, allowed by Q36 on discord
 from Num import Num
 from Sym import Sym
 from Cols import Cols
 
 class Data:
-    def __init__(self):
+    def __init__(self, src):
+        self.cols = None
+        self.rows = []
+        if type(src) == string:
+            csv(src, self.add())
+        else:
+            for _, row in src:
+                self.add(row)
         return
 
 
