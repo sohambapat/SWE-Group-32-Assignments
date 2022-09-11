@@ -48,6 +48,24 @@ def test_the():
 def test_data(d): # d is the csv file with location
     data = Data(d)
     print(data) 
+def csv():
+    n=0
+    csv("..csv("../data/auto93.csv")
+    n=n+1
+    if n> 10:
+        return
+    else:
+        print(Row)
+
+    
+        
+
+
+
+    '''function eg.csv( n)
+300 n=0
+301 csv("../data/auto93.csv",function(row)
+302 n=n+1; if n> 10 then return else oo(row) end end); return true end'''
 
 if __name__ == "__main__":
     d="../test-file.csv"
