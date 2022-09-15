@@ -40,9 +40,9 @@ class Data:
         if fun is None:
             fun = "mid"
         t = {}
-        for _,col in showCols.items():
+        for _,col in enumerate(showCols):
             v = fun(col)
-            if type(v) == (int or float):
+            if isinstance(v, int) or isinstance(v, float):
                 if places is not None:
                     mult = 10**places
                 else:
