@@ -1,5 +1,5 @@
 import re
-
+from typing import List
 
 help="""   
 CSV : summarized csv file
@@ -16,6 +16,12 @@ OPTIONS:
  -s  --seed      random number seed                    = 10019
  -S  --seperator feild seperator                       = , """
 
+def init():
+    global the
+    the = {}
+    for k,v in re.findall(r'\n [-][\S]+[\s]+[-][-]([\S]+)[^\n]+= ([\S]+)', help):
+        the[k] = coerce(v)
+
 def coerce(s):
     def fun(s1):
         if s1 == "true":
@@ -30,14 +36,6 @@ def coerce(s):
             return float(s)
         except ValueError:
             return fun(s.strip())
- 
-
-the = {}
-for k,v in re.findall(r'\n [-][\S]+[\s]+[-][-]([\S]+)[^\n]+= ([\S]+)', help):
-    the[k] = coerce(v)
-
-def cli(t):
-    return
 
 def csv(fname, fun):
     sep = "([^"+the['seperator']+"]+)"
@@ -53,7 +51,28 @@ def csv(fname, fun):
             fun(t)
 
 def o(t):
-    return
+    if not (isinstance(t, dict) or isinstance(t, list)):
+        return str(t)
+    def show(k, v):
+        if not re.compile(r'^_').search(str(k)):
+            v = o(v)
+            if len(t) != 0:
+                return ":{k} {v}".format(k = k, v = v)
+            else:
+                return str(v)
+    u = []
+    if isinstance(t, dict):
+        for k, v in t.items():
+            u.append(show(k,v))
+        if len(t) != 0:
+            u.sort()
+        return "{"+' '.join(map(str, u))+"}"
+    if isinstance(t, list):
+        for i,v in enumerate(t):
+            u.append(str(v))
+        if len(t) != 0:
+            u.sort()
+        return "{"+' '.join(u)+"}"
 
 def oo(t):
     print(o(t))
