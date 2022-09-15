@@ -1,6 +1,3 @@
-
-from Num import Num
-from Sym import Sym
 #function Row:new
 class Row:
 
@@ -9,7 +6,3 @@ class Row:
         self.cells=t
         self.cooked = t.copy()
         self.isEvaled = False
-        
-
-       
-      
