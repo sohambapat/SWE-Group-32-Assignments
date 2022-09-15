@@ -42,7 +42,8 @@ class Sym:
         return e
 
     # function Sym:mid(col,    most,mode) 
-    def mid(self, col, mode, most=-1):
+    def mid(self):
+        most = -1
         for k, v in self._has.items():
             if v > most :
                 mode, most = k, v
