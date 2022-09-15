@@ -3,6 +3,7 @@ sys.path.append('src')
 from Sym import Sym
 from Num import Num
 from Data import Data
+import Utils
 
 def test_sym():
     sym = Sym(0,"")
@@ -12,7 +13,8 @@ def test_sym():
     #entropy is complex, so take real number part only
     entropy = (1000*entropy.real)//1/1000
     # print output: oo({mid=mode, div=entropy})
-    print('mid: {}, div: {}'.format(mode, entropy))
+    #print('mid: {}, div: {}'.format(mode, entropy))
+    Utils.oo({"mid": mode, "div": entropy})
     
     # assert mode=="b" and 1.37 <= entropy and entropy <= 1.38
     if not (mode=="a" and 1.37 <= entropy and entropy <= 1.38):
@@ -23,9 +25,9 @@ def test_sym():
 def test_num():
     num = Num(0,"")
     for i in range(1,100):
-        num.add(i,float('inf'))
-    mid = num.median()
-    div = num.stdDev()
+        num.add(i)
+    mid = num.mid()
+    div = num.div()
     print('mid: {}, div: {}'.format(mid, div))
     if not (mid >= 50 and mid <= 52 and div > 30.5 and div <32):
         raise AssertionError()
@@ -33,38 +35,41 @@ def test_num():
         print("Num test passed")
     
 def test_bignum():
-    print('\n-----------------------------------')
     num=Num(0, '')
+    Utils.the['nums'] = 32
     for x in range(1, 1000):
-        num.add(x, 32)
-    # print output: oo(num.nums())
-    num._has.sort()
-    print(num._has)
+        num.add(x)
+    Utils.oo(num.nums())
     print('Passed? =', len(num._has) == 32)
 
 def test_the():
-    print(Num.the)
+    Utils.oo(Utils.the)
+    return True
 
-def test_data(d): # d is the csv file with location
-    data = Data(d)
-    print(data) 
-def csv():
-    n=0
-    csv("..csv("../data/auto93.csv")
-    n=n+1
-    if n> 10:
-        return
-    else:
-        print(Row)
+def test_data():
+    d = Data(Utils.the['file'])
+    for _,col in enumerate(d.cols.y):
+        print(':at {} :hi {} :isSorted {} :lo {} :n {} :name {} :w {}'.format(col.at, col.hi, col.isSorted, col.lo, col.n, col.name, col.w))
+    return True
 
-    
+def test_csv():
+    def function(row):
+        function.counter += 1
+        if function.counter > 10:
+            return
+        else:
+            Utils.oo(row)
+    function.counter = 0
+    Utils.csv(Utils.the['file'], function)
+    return True
         
 
 if __name__ == "__main__":
-    d="../test-file.csv"
-    test_sym()
+    Utils.init()
     test_the()
-    test_bignum()
-    test_data(d)
+    test_sym()
     test_num()
-    
+    test_bignum()
+    test_csv()
+    test_data()
+#    test_stats()
