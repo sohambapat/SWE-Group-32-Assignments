@@ -72,4 +72,4 @@ class Num:
         if len(self._has)%2==1: # checks if the length of _has is odd or even
             return self._has[int((len(self._has)-1)/2)]
         else: #if even, divide the middle two values to get the median
-            return float(self._has[len(self._has)/2] - self._has[(len(self._has)-2)/2]) 
+            return float((self._has[int(len(self._has)/2)] + self._has[int((len(self._has)-2)/2)])/2) 
