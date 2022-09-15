@@ -9,7 +9,7 @@ def test_sym():
     sym = Sym(0,"")
     for x in ["a","a","a","a","b","b","c"]:
         sym.add(x)
-    mode, entropy = sym.mid(0,""), sym.div()
+    mode, entropy = sym.mid(), sym.div()
     #entropy is complex, so take real number part only
     entropy = (1000*entropy.real)//1/1000
     # print output: oo({mid=mode, div=entropy})
@@ -62,7 +62,18 @@ def test_csv():
     function.counter = 0
     Utils.csv(Utils.the['file'], function)
     return True
-        
+
+def test_stats():
+    data = Data(Utils.the['file'])
+    def div(col):
+        return col.div()
+    def mid(col):
+        return col.mid()
+    print("xmid", Utils.o( data.stats(2,data.cols.x, mid)))
+    print("xdiv", Utils.o( data.stats(3,data.cols.x, div)))
+    print("ymid", Utils.o( data.stats(2,data.cols.y, mid)))
+    print("ydiv", Utils.o( data.stats(3,data.cols.y, div)))
+    return True
 
 if __name__ == "__main__":
     Utils.init()
@@ -72,4 +83,4 @@ if __name__ == "__main__":
     test_bignum()
     test_csv()
     test_data()
-#    test_stats()
+    test_stats()
