@@ -4,6 +4,46 @@ from Sym import Sym
 from Num import Num
 from Data import Data
 import Utils
+import random
+import test # Import itself so it can access methods to find tests
+
+# Test Engine
+def runs(k):
+    global fails
+    fails = 0
+    eg = []
+    methods = dir(test) # Loads every method in test.py
+    for _,v in enumerate(methods):
+        if v.find("test_") == 0:
+            eg.append(v) # Add all methods that start with test_
+    eg.sort()
+    for _,v in enumerate(eg): # Run each method that starts with test_
+        out = None
+        random.seed(Utils.the['seed']) # Set random seed
+        old = Utils.the.copy() # Copy information before test
+        if Utils.the['dump']:
+            status = True
+            out = eval(v+"()")
+        else:
+            try:
+                out = eval(v+"()")
+                status = True
+            except Exception as e:
+                out = str(e)
+        Utils.the = old.copy() # Set "the" back to pre-test values
+        if 'status' in locals():
+            if out == True:
+                msg = "PASS"
+            else:
+                msg = "FAIL"
+        else:
+            msg = "CRASH"
+            status = False
+        print("\n!!!!!!", msg, v, status) # Print test status
+        print("\n-----------------------------------")
+        if not out:
+            fails += 1
+
 
 def test_sym():
     sym = Sym(0,"")
@@ -20,7 +60,7 @@ def test_sym():
     if not (mode=="a" and 1.37 <= entropy and entropy <= 1.38):
         raise AssertionError()
     else:
-        print("Sym test passed")
+        return True
 
 def test_num():
     num = Num(0,"")
@@ -32,7 +72,7 @@ def test_num():
     if not (mid >= 50 and mid <= 52 and div > 30.5 and div <32):
         raise AssertionError()
     else:
-        print("Num test passed")
+        return True
     
 def test_bignum():
     num=Num(0, '')
@@ -40,7 +80,7 @@ def test_bignum():
     for x in range(1, 1000):
         num.add(x)
     Utils.oo(num.nums())
-    print('Passed? =', len(num._has) == 32)
+    return len(num._has) == 32
 
 def test_the():
     Utils.oo(Utils.the)
@@ -75,12 +115,10 @@ def test_stats():
     print("ydiv", Utils.o( data.stats(3,data.cols.y, div)))
     return True
 
+def test_bad():
+    raise Exception("Crash")
+
 if __name__ == "__main__":
     Utils.init()
-    test_the()
-    test_sym()
-    test_num()
-    test_bignum()
-    test_csv()
-    test_data()
-    test_stats()
+    runs(Utils.the['eg'])
+    exit(fails)
