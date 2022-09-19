@@ -1,7 +1,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/sohambapat/SWE-Group-32-Assignments/blob/main/LICENSE)  
 [![badge](https://github.com/sohambapat/SWE-Group-32-Assignments/actions/workflows/build.yml/badge.svg)](https://github.com/sohambapat/SWE-Group-32-Assignments/blob/main/.github/workflows/build.yml)
 
-[![DOI](https://zenodo.org/badge/529902359.svg)](https://zenodo.org/badge/latestdoi/529902359)    
 
 # SWE-Group-32-Assignments
 This repo is created to upload all assignments for SWE 510-Group 32
