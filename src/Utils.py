@@ -1,7 +1,6 @@
 import re
-from typing import List
 
-help="""   
+help="""    
 CSV : summarized csv file
 (c) 2022 Tim Menzies <timm@ieee.org> BSD-2 license
 
@@ -15,14 +14,24 @@ OPTIONS:
  -n  --nums      number of nums to keep                = 512
  -s  --seed      random number seed                    = 10019
  -S  --seperator feild seperator                       = , """
+"""Command line arguments for 'the' to use when initializing."""
+
 
 def init():
+    """Initializes the value of 'the' using the arguments from 'help'."""
     global the
     the = {}
     for k,v in re.findall(r'\n [-][\S]+[\s]+[-][-]([\S]+)[^\n]+= ([\S]+)', help):
         the[k] = coerce(v)
 
 def coerce(s):
+    """Converts a string into the appropriate type and trims if necessary.
+    
+    Parameters:
+    s (str): String being converted to another type
+    
+    Returns:
+    Returns the string in its appropriate type"""
     def fun(s1):
         if s1 == "true":
             return True
@@ -38,6 +47,14 @@ def coerce(s):
             return fun(s.strip())
 
 def csv(fname, fun):
+    """Reads the information from a csv file
+    
+    Parameters:
+    fname (str): The name of the file to be opened
+    fun (function): A function with one parameter expecting a dict
+    
+    Returns:
+    Nothing"""
     sep = "([^"+the['seperator']+"]+)"
     src = open(fname, "r")
     while True:
@@ -51,6 +68,10 @@ def csv(fname, fun):
             fun(t)
 
 def o(t):
+    """Formats a dict into a readable format and prints it
+    Parameters:
+    t (dict): Dict being printed
+    Returns: The string that is printed"""
     if not (isinstance(t, dict) or isinstance(t, list)):
         return str(t)
     def show(k, v):
@@ -75,5 +96,12 @@ def o(t):
         return "{"+' '.join(u)+"}"
 
 def oo(t):
+    """Prints a table and returns it
+    
+    Parameters:
+    t (dict): Dict to be printed and returned unchanged
+    
+    Returns:
+    The parameter given with no changes made"""
     print(o(t))
     return t
