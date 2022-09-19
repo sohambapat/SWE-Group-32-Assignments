@@ -69,8 +69,10 @@ def csv(fname, fun):
 
 def o(t):
     """Formats a dict into a readable format and prints it
+
     Parameters:
     t (dict): Dict being printed
+    
     Returns: The string that is printed"""
     if not (isinstance(t, dict) or isinstance(t, list)):
         return str(t)
