@@ -50,11 +50,8 @@ def csv(fname, fun):
     """Reads the information from a csv file
     
     Parameters:
-    fname (str): The name of the file to be opened
-    fun (function): A function with one parameter expecting a dict
-    
-    Returns:
-    Nothing"""
+    fname (str): The name of the file to be opened,
+    fun (function): A function with one parameter expecting a dict"""
     sep = "([^"+the['seperator']+"]+)"
     src = open(fname, "r")
     while True:

@@ -29,7 +29,7 @@ class Data:
         row of the csv set the row to be the headers (cols).
         
         Parameters:
-        xs (Row): The Row object being added to the data
+        xs (Row): The Row object being added to the data,
         xs (str): The string to be converted to a row object and added to the data"""
         row = []
         if not self.cols:
@@ -49,10 +49,13 @@ class Data:
     def stats(self, places, showCols, fun):
         """Takes stats from the columns of data and returns them
         
-        Parameter:
-        places (int): The amount of decimal places (default 2)
-        showCols (list): A list of all the columns
-        fun (function): A function that gathers the statistic from the data in the column"""
+        Parameters:
+        places (int): The amount of decimal places (default 2),
+        showCols (list): A list of all the columns,
+        fun (function): A function that gathers the statistic from the data in the column
+        
+        Returns:
+        A list consisting of the statistic for each column in their respective index"""
         if showCols is None:
             showCols = self.cols.y
         if fun is None:

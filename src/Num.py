@@ -5,6 +5,11 @@ import random
 class Num:
 
     def __init__(self, c, s):
+        """Creates a list that represents a column of numbers in the csv
+        
+        Parameters:
+        c (int): The columns position,
+        s (str): The columns name"""
         self.n = 0
 
         if c is not None:
@@ -27,6 +32,10 @@ class Num:
 
     # function Num:nums()
     def nums(self):
+        """Sorts the numbers in the list
+        
+        Returns:
+        The sorted list"""
         if type(self) != Num:
             return
         if not self.isSorted:
@@ -36,6 +45,11 @@ class Num:
 
     # function for Num:add(v,   pos)
     def add (self, v):
+        """Adds a number to the list. The list only holds a certain amount of numbers
+        depending on the 'nums' argument in 'the' from Utils. Uses resevoir sampling.
+        
+        Parameters:
+        v (number): The value being added to the list"""
         if v!="?":
             self.n += 1
             if self.lo > v:  # checks for lowest value
@@ -57,10 +71,15 @@ class Num:
 
     # function for Num:div()
     def div(self):
+        """Calculates the standard deviation of the list of numbers
+        
+        Returns:
+        The standard deviation"""
         a = self.nums()
         return (self.per(a,.9)-self.per(a,.1))/2.58
 
     def per(self,t,p):
+        """Helper method for calculating the standard deviation"""
         if p is None:
             p = .5
         p= floor((p*len(t))+.5)
@@ -68,6 +87,10 @@ class Num:
 
     # function for Num:mid()
     def mid(self):
+        """Calculates the median number from the list
+        
+        Returns:
+        The median number from the list"""
         self.nums()
         if len(self._has)%2==1: # checks if the length of _has is odd or even
             return self._has[int((len(self._has)-1)/2)]

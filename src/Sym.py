@@ -4,10 +4,13 @@ import random
 
 class Sym:
     
-    the = {"eg":"Hello", "dump":"false", "file": "../test-file.csv", "help": "..", "nums": "32", "seed": random.randint(0,1000), "seperator":","}
-
     # Constructor Sym:new(c,s) 
     def __init__(self,c,s):
+        """Creates a dict that represents a column of symbols in the csv
+        
+        Parameters:
+        c (int): The columns position,
+        s (str): The columns name"""
         self.n = 0
         # self.at = c if self.at else 0
         if c is not None:
@@ -24,6 +27,10 @@ class Sym:
         
     # function sym:add(v)
     def add(self, v):
+        """Adds a value to the column
+        
+        Parameters:
+        v (str): The value being added"""
         if v!= "?":
             self.n= self.n+1
             if v in self._has.keys():
@@ -35,6 +42,10 @@ class Sym:
  
     # function sym:div()
     def div(self):
+        """Calculates the entropy of all the items in the column
+        
+        Returns:
+        The calculated entropy"""
         e = 0
         for _, n in self._has.items():
             if n > 0 :
@@ -43,6 +54,10 @@ class Sym:
 
     # function Sym:mid(col,    most,mode) 
     def mid(self):
+        """Calculates the mode of all the items in the column
+        
+        Returns:
+        The symbol that appeared the most"""
         most = -1
         for k, v in self._has.items():
             if v > most :

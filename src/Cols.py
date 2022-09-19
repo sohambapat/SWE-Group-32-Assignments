@@ -6,6 +6,11 @@ class Cols:
 
     # names is a table
     def __init__(self, names):
+        """Creates a list containing all of the columns. Creates column
+        objects as Nums or Syms depending on the name of the column.
+        
+        Parameters:
+        names (list): List of the names of all the columns"""
         # Changed these from dicts to lists because the lua
         # push method sets the key to index value, just like a list
         self.names = names
