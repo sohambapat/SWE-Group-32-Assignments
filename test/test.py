@@ -9,7 +9,6 @@ import test # Import itself so it can access methods to find tests
 
 # Test Engine
 def runs(k):
-    global fails
     fails = 0
     eg = []
     methods = dir(test) # Loads every method in test.py
@@ -43,6 +42,7 @@ def runs(k):
         print("\n-----------------------------------")
         if not out:
             fails += 1
+    return fails
 
 
 def test_sym():
@@ -120,5 +120,5 @@ def test_bad():
 
 if __name__ == "__main__":
     Utils.init()
-    runs(Utils.the['eg'])
+    fails = runs(Utils.the['eg'])
     exit(fails)
