@@ -12,3 +12,5 @@ The contributors for this repo alphatebically are Chris Kastritis, Collin Riggs,
 Refer to the requirements.txt for a list of requirements to access and run items on this repo on your local device.  
 
 INSTALL.md will help you set up and run the code in this repo.  
+
+See documents here. [https://sohambapat.github.io/SWE-Group-32-Assignments/src/](https://sohambapat.github.io/SWE-Group-32-Assignments/src/)  
