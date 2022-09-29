@@ -1,10 +1,12 @@
 # HW5 Evaluation  
 ## Group 35  
-Grader: Seoyeong Park
-  
+Grader: Seoyeong Park  
+Full marks: 3 points  
+0 for rules that do not clearly fit to this hw.  
+   
 |Notes|evidence|score|
 |-----|---------|-----:|
-||Total|93|
+||Total|55|
 |Video1| For people starting with 2020 or 2021 projects, 2min video of old functionality|0| 
 |Video2|For people starting with 2020 or 2021 projects, 2min video of new functionality, showing a significant delta from old. For everyone else, 2min video of all functionality.|0| 
 |Workload is spread over the whole team (one team member is often Xtimes more productive than the others... ||3|
