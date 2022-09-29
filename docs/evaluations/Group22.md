@@ -1,17 +1,11 @@
 # HW5 Evaluation  
-## Group 35  
-Grader: Seoyeong Park  
-Full marks: 3 points  
-0 for rules that do not clearly fit to this hw.  
-   
-# HW5 Evaluation  
-## Group 19  
-Grader: Collin Riggs
+## Group 22  
+Grader: Chris Kastritis
   
 
 |Notes|Score|Evidence|
 |-----|-----|--------|
-|Total|33||
+|Total|35||
 |Video1|0|| 
 |Video2|0||
 |Workload is spread over the whole team (one team member is often Xtimes more productive than the others... but nevertheless, here is a track record that everyone is contributing a lot)|3|https://github.com/agupta15k/ncsu_se_fall22_22_hw2-5/graphs/contributors |
