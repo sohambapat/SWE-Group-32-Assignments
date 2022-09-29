@@ -5,7 +5,7 @@ Grader: Safaa Mohamed
 
 |Notes|Score|Evidence|
 |-----|-----|--------|
-|Total|132||
+|Total|70||
 |Video1|0|| 
 |Video2|0||
 |Workload is spread over the whole team (one team member is often Xtimes more productive than the others... but nevertheless, here is a track record that everyone is contributing a lot)|3|https://github.com/aadiltajani/CSC510-HW-GRP19/graphs/contributors |
