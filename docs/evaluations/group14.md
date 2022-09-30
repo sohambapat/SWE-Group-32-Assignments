@@ -5,7 +5,7 @@ Grader: Safaa Mohamed
 
 |Notes|Score|Evidence|
 |-----|-----|--------|
-|Total|70||
+|Total|62||
 |Video1|0|| 
 |Video2|0||
 |Workload is spread over the whole team (one team member is often Xtimes more productive than the others... but nevertheless, here is a track record that everyone is contributing a lot)|3|https://github.com/aadiltajani/CSC510-HW-GRP19/graphs/contributors |
@@ -20,10 +20,10 @@ Grader: Safaa Mohamed
 |Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing|3|https://github.com/mithildani/se22-hw1-grp14/tree/master/docs|
 |Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.|0|No video|
 |Use of version control tools|3|Used git|
-|Use of style checkers |3|https://github.com/mithildani/se22-hw1-grp14/blob/master/docs/conf.py|
-|Use of code formatters. |3|https://github.com/mithildani/se22-hw1-grp14/blob/master/docs/conf.py|
-|Use of syntax checkers. |3|https://github.com/mithildani/se22-hw1-grp14/blob/master/docs/conf.py|
-|Use of code coverage |3|https://github.com/mithildani/se22-hw1-grp14/blob/master/docs/conf.py|
+|Use of style checkers |1|https://github.com/mithildani/se22-hw1-grp14/blob/master/docs/conf.py|
+|Use of code formatters. |1|https://github.com/mithildani/se22-hw1-grp14/blob/master/docs/conf.py|
+|Use of syntax checkers. |1|https://github.com/mithildani/se22-hw1-grp14/blob/master/docs/conf.py|
+|Use of code coverage |1|https://github.com/mithildani/se22-hw1-grp14/blob/master/docs/conf.py|
 |Other automated analysis tools|0|There were no automated analysis tools, only running the program. https://github.com/mithildani/se22-hw1-grp14/actions |
 |Test cases exist|3|https://github.com/mithildani/se22-hw1-grp14/blob/master/test/test_code.py |
 |Test cases are routinely executed|0|No evidence of tests being routinely run|
