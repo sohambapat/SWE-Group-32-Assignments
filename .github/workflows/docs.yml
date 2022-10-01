@@ -27,6 +27,17 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       # ADJUST THIS: build your documentation into docs/.
       # We use a custom build script for pdoc itself, ideally you just run `pdoc -o docs/ ...` here.
+      - name: Create env file
+        run: |
+          cat << EOF > config.py
+          tokens = {
+          'discord_token': TOKEN,
+          'finnhub_token': TOKEN
+          }
+          EOF
+#     - name: Test with pytest
+#       run: |
+#         pytest
       - run: PYTHONPATH=src pdoc -o docs --html --force src
       - uses: actions/upload-pages-artifact@v1
         with:
