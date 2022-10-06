@@ -19,7 +19,7 @@ Grader: Soham Bapat
 |Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z|0|No documentation|
 |Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing|0|No documentation|
 |Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.|0|No video|
-|Use of version control tools|0|Used git|
+|Use of version control tools|3|Used code coverage tests|
 |Use of style checkers |0|Could not find evidence of any style checker|
 |Use of code formatters. |0|Could not find evidence of any style checker|
 |Use of syntax checkers. |0|Could not find evidence of any style checker|
