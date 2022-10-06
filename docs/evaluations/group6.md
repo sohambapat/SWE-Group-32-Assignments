@@ -5,7 +5,7 @@ Grader: Soham Bapat
 
 |Notes|Score|Evidence|
 |-----|-----|--------|
-|Total|30||
+|Total|33||
 |Video1|0|| 
 |Video2|0||
 |Workload is spread over the whole team (one team member is often Xtimes more productive than the others... but nevertheless, here is a track record that everyone is contributing a lot)|3|https://github.com/MitanshuShaBa/SE-hw2345/graphs/contributors|
